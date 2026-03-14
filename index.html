@@ -384,6 +384,17 @@
       margin-bottom: 0.2rem;
     }
 
+    .protocol-name a {
+      color: var(--protocol);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .protocol-name a:hover {
+      border-color: var(--protocol);
+    }
+
     .protocol-role {
       font-size: 9px;
       color: var(--text-dim);
@@ -395,6 +406,15 @@
       font-size: 10px;
       color: var(--text-dim);
       margin-top: 0.3rem;
+    }
+
+    .protocol-usage {
+      font-size: 9px;
+      color: var(--accent);
+      margin-top: 0.4rem;
+      padding-top: 0.4rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.4;
     }
 
     /* Charter principles - compact */
@@ -640,19 +660,22 @@
       </div>
       <div class="protocol-grid">
         <div class="protocol-block">
-          <div class="protocol-name">A2A</div>
+          <div class="protocol-name"><a href="https://github.com/a2aproject/A2A" target="_blank">A2A</a></div>
           <div class="protocol-role">Agent-to-Agent</div>
           <div class="protocol-ver">JSON-RPC 2.0 / HTTP(S)</div>
+          <div class="protocol-usage">Merchants expose agent-card.json as discovery entry point</div>
         </div>
         <div class="protocol-block">
-          <div class="protocol-name">gitagent</div>
+          <div class="protocol-name"><a href="https://github.com/open-gitagent/gitagent" target="_blank">gitagent</a></div>
           <div class="protocol-role">Agent Definition</div>
           <div class="protocol-ver">agent.yaml + SOUL.md</div>
+          <div class="protocol-usage">Every merchant repo follows this structure</div>
         </div>
         <div class="protocol-block">
-          <div class="protocol-name">AG-UI</div>
+          <div class="protocol-name"><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank">AG-UI</a></div>
           <div class="protocol-role">Agent-to-Human</div>
           <div class="protocol-ver">Event-Driven / SSE</div>
+          <div class="protocol-usage">Town Guide (planned) will use this for human interaction</div>
         </div>
       </div>
     </div>
