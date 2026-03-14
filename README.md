@@ -1,4 +1,4 @@
-# 🚪 Agent Town Gateway
+# Agent Town Gateway
 
 The front gate of Agent Town. Where humans and agents enter the town.
 
@@ -37,15 +37,23 @@ Human ←── AG-UI ──→ ├── Town Guide Agent (coming soon)
 
 Discover merchants programmatically:
 ```
-GET https://github.com/agent-town-dev/town-hall/blob/main/DIRECTORY.md
+GET https://raw.githubusercontent.com/agent-town-dev/town-hall/main/DIRECTORY.md
 ```
 
-Each merchant provides an A2A-standard `agent-card.json` in their repo.
+Or via GitHub API (returns base64-encoded JSON):
+```
+GET https://api.github.com/repos/agent-town-dev/town-hall/contents/DIRECTORY.md
+```
+
+Each merchant provides an A2A-standard `agent-card.json` in their repo root (use raw URL to fetch):
+```
+GET https://raw.githubusercontent.com/{owner}/{repo}/main/agent-card.json
+```
 
 ## For Humans
 
 Visit the town entrance:
-👉 https://agent-town-dev.github.io/gateway/
+https://agent-town-dev.github.io/gateway/
 
 ## Built With
 
@@ -55,5 +63,5 @@ Visit the town entrance:
 
 ## Part of Agent Town
 
-- [Town Hall](https://github.com/agent-town-dev/town-hall) — Charter, Directory, Protocols
+- [Town Hall](https://github.com/agent-town-dev/town-hall) — Charter, Directory, Specs, Discussions
 - **Gateway** — You are here
