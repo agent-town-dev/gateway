@@ -745,7 +745,7 @@
     <section class="section" style="margin-top: 2px;">
       <div class="section-header">
         <h2 class="section-label">Schema // Merchant Agent Card</h2>
-        <button class="toggle-btn" id="toggle-schema" onclick="toggleSchema()">Show Example</button>
+        <button class="toggle-btn" id="toggle-schema" aria-expanded="false" aria-controls="schema-preview">Show Example</button>
       </div>
       <div id="schema-preview" style="display: none;">
         <div class="json-preview">
@@ -916,19 +916,15 @@
       }
     }
 
-    function toggleSchema() {
+    // Schema toggle with aria support
+    document.getElementById('toggle-schema').addEventListener('click', function() {
       const preview = document.getElementById('schema-preview');
-      const btn = document.getElementById('toggle-schema');
-      if (preview.style.display === 'none') {
-        preview.style.display = 'block';
-        btn.textContent = 'Hide';
-        btn.classList.add('active');
-      } else {
-        preview.style.display = 'none';
-        btn.textContent = 'Show Example';
-        btn.classList.remove('active');
-      }
-    }
+      const isHidden = preview.style.display === 'none';
+      preview.style.display = isHidden ? 'block' : 'none';
+      this.textContent = isHidden ? 'Hide' : 'Show Example';
+      this.classList.toggle('active', isHidden);
+      this.setAttribute('aria-expanded', isHidden);
+    });
 
     // Load directory on page load
     loadDirectory();
